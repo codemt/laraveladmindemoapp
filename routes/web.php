@@ -19,3 +19,6 @@ Route::get('/home',function(){
     return view('layouts.navbar');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
