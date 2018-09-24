@@ -254,20 +254,20 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Mithilesh Tarkar</span>
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                <p>
+                {{-- <p>
                   Alexander Pierce - Web Developer
                   <small>Member since Nov. 2012</small>
-                </p>
+                </p> --}}
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
+              {{-- <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -280,14 +280,23 @@
                   </div>
                 </div>
                 <!-- /.row -->
-              </li>
+              </li> --}}
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  {{-- <a href="#" class="btn btn-default btn-flat">Sign out </a> --}}
+                  <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                   {{ __('Logout') }}
+               </a>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+
                 </div>
               </li>
             </ul>
@@ -311,12 +320,12 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Mithilesh Tarkar</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      {{-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -325,7 +334,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> --}}
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -337,12 +346,12 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
+          {{-- <ul class="treeview-menu">
             <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
+          </ul> --}}
         </li>
-        <li class="treeview">
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -356,16 +365,16 @@
             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
-        </li>
-        <li>
+        </li> --}}
+        {{-- <li>
           <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
-        </li>
-        <li class="treeview">
+        </li> --}}
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
@@ -379,8 +388,8 @@
             <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> --}}
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>UI Elements</span>
@@ -396,8 +405,8 @@
             <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
             <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> --}}
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -409,8 +418,8 @@
             <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
             <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> --}}
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
             <span class="pull-right-container">
@@ -421,8 +430,8 @@
             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
-        </li>
-        <li>
+        </li> --}}
+        {{-- <li>
           <a href="pages/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
@@ -430,8 +439,8 @@
               <small class="label pull-right bg-blue">17</small>
             </span>
           </a>
-        </li>
-        <li>
+        </li> --}}
+        {{-- <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
@@ -440,10 +449,10 @@
               <small class="label pull-right bg-red">5</small>
             </span>
           </a>
-        </li>
+        </li> --}}
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Examples</span>
+            <i class="fa fa-folder"></i> <span>All Students</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -462,7 +471,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
+            <i class="fa fa-share"></i> <span>Fees Reminder </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -494,10 +503,10 @@
           </ul>
         </li>
         <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
+        {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> --}}
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -509,6 +518,7 @@
 
     <!-- Main content -->
     <section class="content">
+        @include('layouts.dashboard-widgets') 
       <!-- Info boxes -->
       <!-- /.row -->
       <!-- /.row -->
