@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('admin.login');
+});
 Route::get('/dashboard',function(){
 
     return view('layouts.navbar');
@@ -21,4 +24,11 @@ Route::get('/dashboard',function(){
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('admin/login','AdminController@login')->name('admin.login');
+Route::get('admin/students/all','AdminController@getStudents')->name('admin.students');
+Route::get('tables',function(){
+
+    return view('layouts.display_table');
+
+});
