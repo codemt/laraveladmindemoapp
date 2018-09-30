@@ -19,7 +19,7 @@ Route::get('/login', function () {
 });
 Route::get('/dashboard',function(){
 
-    return view('layouts.navbar');
+    return view('layouts.index');
 
 });
 Auth::routes();
@@ -35,6 +35,7 @@ Route::post('admin/students/create','AdminController@store')->name('admin.studen
 
 // edit students
 Route::get('admin/students/edit/{id}','AdminController@editStudents')->name('admin.students.edit');
+Route::post('admin/students/update','AdminController@updateStudents')->name('admin.students.update');
 
 Route::get('tables',function(){
 

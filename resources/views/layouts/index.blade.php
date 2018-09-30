@@ -141,8 +141,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Fees </a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Reminders </a></li>
+            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Inquires </a></li>
             <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Send Emails </a></li>
             <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Test Series</a></li>
           </ul>
