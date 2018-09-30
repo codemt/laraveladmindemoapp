@@ -227,7 +227,7 @@
                     </tr>
                     @foreach($students as $student)
                     <tr>
-                      <td>{{$student->id}}</td>
+                    <td> <a href="{{ url('admin/students/edit/'.$student->id) }}"> {{$student->id}} </a> </td>
                       <td>{{ $student->first_name }}</td>
                       <td>{{ $student->last_name }}</td>
                       <td><span class="label label-success">{{$student->course_name}}</span></td>

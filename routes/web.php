@@ -27,8 +27,15 @@ Auth::routes();
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('admin/login','AdminController@login')->name('admin.login');
 Route::get('admin/students/all','AdminController@getStudents')->name('admin.students');
+
+// create new students
 Route::get('admin/students/create','AdminController@createNew')->name('admin.students.create');
 Route::post('admin/students/create','AdminController@store')->name('admin.students.store');
+
+
+// edit students
+Route::get('admin/students/edit/{id}','AdminController@editStudents')->name('admin.students.edit');
+
 Route::get('tables',function(){
 
     return view('layouts.display_table');

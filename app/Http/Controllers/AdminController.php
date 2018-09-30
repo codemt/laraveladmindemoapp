@@ -50,5 +50,12 @@ class AdminController extends Controller
             
 
     }
+    public function editStudents(Request $request,$id){
+
+           // $id = $request->id;
+            $student = Students::find($id);
+            //return $student;
+            return view('students.edit')->with('student',$student);
+    }
 
 }
