@@ -141,6 +141,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
+            <li><a href="{{ route('admin.students.create') }}"><i class="fa fa-circle-o"></i> Add New </a></li>
             <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Fees </a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Reminders </a></li>
             <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Send Emails </a></li>
@@ -212,7 +213,7 @@
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
-                      @foreach($students as $student)
+                     
                     <tr>
                       <th>ID</th>
                       <th>FirstName</th>
@@ -221,8 +222,10 @@
                       <th>Student Email</th>
                       <th>Parent Email</th>
                       <th>Student Number</th>
-                      <th>Parent Number</th>
+                      <th>Parent Number </th>
+                      <th> Address </th>
                     </tr>
+                    @foreach($students as $student)
                     <tr>
                       <td>{{$student->id}}</td>
                       <td>{{ $student->first_name }}</td>
@@ -232,6 +235,7 @@
                       <td>{{ $student->parent_email }}</td>
                       <td>{{ $student->student_mobile }}</td>
                       <td>{{ $student->parent_mobile }}</td>
+                      <td>{{ $student->address }}</td>
                     </tr>
                     @endforeach
                   </table>

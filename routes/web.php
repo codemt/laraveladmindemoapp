@@ -27,6 +27,8 @@ Auth::routes();
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('admin/login','AdminController@login')->name('admin.login');
 Route::get('admin/students/all','AdminController@getStudents')->name('admin.students');
+Route::get('admin/students/create','AdminController@createNew')->name('admin.students.create');
+Route::post('admin/students/create','AdminController@store')->name('admin.students.store');
 Route::get('tables',function(){
 
     return view('layouts.display_table');

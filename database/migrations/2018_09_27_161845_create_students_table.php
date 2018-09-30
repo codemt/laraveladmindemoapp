@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('parent_email');
             $table->integer('student_mobile');
             $table->integer('parent_mobile');
+            $table->string('address');
             $table->timestamps();
         });
     }
