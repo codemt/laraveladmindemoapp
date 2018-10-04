@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return redirect('admin/login');
 });
-Route::get('/login', function () {
+Route::get('/admin/login', function () {
     return view('admin.login');
 });
 Route::get('/dashboard',function(){
@@ -36,6 +37,10 @@ Route::post('admin/students/create','AdminController@store')->name('admin.studen
 // edit students
 Route::get('admin/students/edit/{id}','AdminController@editStudents')->name('admin.students.edit');
 Route::post('admin/students/update','AdminController@updateStudents')->name('admin.students.update');
+
+
+// add fees
+Route::get('admin/students/fees','FeesController@index')->name('admin.students.fees');
 
 Route::get('admin/emails/dashboard','EmailController@index')->name('admin.emails.dashboard');
 

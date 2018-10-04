@@ -37,7 +37,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-  <a href="{{ route('home') }}" class="logo">
+    <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>C</b>M</b>P</span>
       <!-- logo for regular state and mobile devices -->
@@ -141,9 +141,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
-            <li><a href="{{ route('admin.students.create') }}"><i class="fa fa-circle-o"></i> Add New </a></li>
-            <li><a href="{{ route('admin.students.fees') }}"><i class="fa fa-circle-o"></i> Fees </a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Reminders </a></li>
+            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Inquires </a></li>
             <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Send Emails </a></li>
             <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Test Series</a></li>
           </ul>
@@ -181,7 +179,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="{{ route('admin.emails.dashboard')}}"><i class="fa fa-book"></i> <span> Send Emails </span></a></li>
         {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -195,61 +193,61 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Students  Database Table</h3>
-    
-                  <div class="box-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-    
-                      <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Students  Database Table</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                   </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                     
-                    <tr>
-                      <th>ID</th>
-                      <th>FirstName</th>
-                      <th>LastName</th>
-                      <th>Course</th>
-                      <th>Student Email</th>
-                      <th>Parent Email</th>
-                      <th>Student Number</th>
-                      <th>Parent Number </th>
-                      <th> Address </th>
-                    </tr>
-                    @foreach($students as $student)
-                    <tr>
-                    <td> <a href="{{ url('admin/students/edit/'.$student->id) }}"> {{$student->id}} </a> </td>
-                      <td>{{ $student->first_name }}</td>
-                      <td>{{ $student->last_name }}</td>
-                      <td><span class="label label-success">{{$student->course_name}}</span></td>
-                      <td>{{ $student->student_email }}</td>
-                      <td>{{ $student->parent_email }}</td>
-                      <td>{{ $student->student_mobile }}</td>
-                      <td>{{ $student->parent_mobile }}</td>
-                      <td>{{ $student->address }}</td>
-                    </tr>
-                    @endforeach
-                  </table>
-                </div>
-                <!-- /.box-body -->
               </div>
-              <!-- /.box -->
             </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                 
+                <tr>
+                  <th>ID</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Course</th>
+                  <th>Student Email</th>
+                  <th>Parent Email</th>
+                  <th>Student Number</th>
+                  <th>Parent Number </th>
+                  <th> Address </th>
+                </tr>
+                @foreach($fees as $fee)
+                <tr>
+                  <td>{{ $fee->student_id }}</td>
+                  <td>{{ $student->duration }}</td>
+                  <td><span class="label label-success">{{$student->course_name}}</span></td>
+                  <td>{{ $student->fee_amount }}</td>
+                  <td>{{ $student->valid_till }}</td>
+                </tr>
+                @endforeach
+              </table>
+            </div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
+        </div>
+      </div>
 
 
+
+<!-- Main content -->
+    
 
     <!-- Main content -->
     <section class="content">
+       
       <!-- Info boxes -->
       <!-- /.row -->
       <!-- /.row -->
@@ -484,6 +482,6 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../../dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="../dist/js/demo.js"></script>
 </body>
 </html>

@@ -24,7 +24,8 @@ class CreateStudentsTable extends Migration
             $table->integer('student_mobile');
             $table->integer('parent_mobile');
             $table->string('address');
-            $table->timestamps();
+            $table->boolean('discontinued')->default(false);
+             $table->timestamps();
         });
     }
 
