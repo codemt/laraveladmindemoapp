@@ -15,9 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('middle_name')->nullable();
-            $table->string('last_name');
+            $table->string('name');
             $table->text('course_name');
             $table->string('student_email');
             $table->string('parent_email');
@@ -25,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->integer('parent_mobile');
             $table->string('address');
             $table->boolean('discontinued')->default(false);
+            $table->boolean('course_completed')->default(false);
              $table->timestamps();
         });
     }

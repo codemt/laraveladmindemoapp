@@ -19,6 +19,8 @@ class CreateFeesTable extends Migration
             $table->increments('id');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students');
+            $table->string('name');
+            $table->text('course_name');
             $table->string('duration');
             $table->integer('fee_amount');
             $table->date('valid_till');

@@ -33,9 +33,7 @@ class AdminController extends Controller
     {
         $new = new Students();
 
-        $new->first_name = $request->input('first_name');
-        $new->last_name = $request->input('first_name');
-        $new->middle_name = $request->input('middle_name');
+        $new->name = $request->input('name');
         $new->course_name = $request->input('course_name');
         $new->student_email = $request->input('student_email');
         $new->parent_email = $request->input('parent_email');
@@ -62,7 +60,7 @@ class AdminController extends Controller
     {
 
         $update = Students::find($request->id);
-        $update->first_name = $request->input('first_name');
+        $update->name = $request->input('name');
         $update->last_name = $request->input('first_name');
         $update->middle_name = $request->input('middle_name');
         $update->course_name = $request->input('course_name');

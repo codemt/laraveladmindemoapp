@@ -23,8 +23,7 @@
              
             <tr>
               <th>ID</th>
-              <th>FirstName</th>
-              <th>LastName</th>
+              <th>Name</th>
               <th>Course</th>
               <th>Student Email</th>
               <th>Parent Email</th>
@@ -35,8 +34,7 @@
             @foreach($students as $student)
             <tr>
             <td> <a href="{{ url('admin/students/edit/'.$student->id) }}"> {{$student->id}} </a> </td>
-              <td>{{ $student->first_name }}</td>
-              <td>{{ $student->last_name }}</td>
+              <td>{{ $student->name }}</td>
               <td><span class="label label-success">{{$student->course_name}}</span></td>
               <td>{{ $student->student_email }}</td>
               <td>{{ $student->parent_email }}</td>

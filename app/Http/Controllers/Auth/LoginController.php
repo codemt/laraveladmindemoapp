@@ -39,7 +39,7 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request) {
-        // dd($request->all());
+       //  dd($request->all());
         
 
         return redirect('/admin/login');

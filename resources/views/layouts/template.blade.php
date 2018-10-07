@@ -144,18 +144,17 @@
             <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
             <li><a href="{{ route('admin.students.create') }}"><i class="fa fa-circle-o"></i> Add New </a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Inquires </a></li>
-            <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Send Emails </a></li>
+          <li><a href="{{ route('admin.fees.create')}}"><i class="fa fa-circle-o"></i> Add Fees </a></li>
             <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Test Series</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Fees Reminder </span>
+        {{-- <li class="treeview">
+        
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
+        
+           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-circle-o"></i> Level One
@@ -179,8 +178,9 @@
               </ul>
             </li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li>
+          </ul> 
+        </li> --}}
+        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span>Fees Master </span> </a> </li>
         <li><a href="{{ route('admin.emails.dashboard')}}"><i class="fa fa-book"></i> <span> Send Emails </span></a></li>
         {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
@@ -203,9 +203,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy;2018 <a href="https://adminlte.io"> Morbius Technologies </a>.</strong> All rights
     reserved.
   </footer>
 

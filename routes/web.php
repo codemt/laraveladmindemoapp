@@ -20,7 +20,7 @@ Route::get('/admin/login', function () {
 });
 Route::get('/dashboard',function(){
 
-    return view('layouts.index');
+    return view('layouts.template');
 
 });
 Auth::routes();
@@ -40,9 +40,12 @@ Route::get('admin/students/edit/{id}','AdminController@editStudents')->name('adm
 Route::post('admin/students/update','AdminController@updateStudents')->name('admin.students.update');
 
 
-// add fees
-Route::get('admin/students/fees','FeesController@index')->name('admin.students.fees');
+// add fees dashboard
+Route::get('admin/students/fees/dashboard','FeesController@index')->name('admin.students.fees');
 
+// create fee record
+Route::get('admin/students/fees','FeesController@create')->name('admin.fees.create');
+Route::post('admin/students/fees/add','FeesController@store')->name('admin.fees.store');
 Route::get('admin/emails/dashboard','EmailController@index')->name('admin.emails.dashboard');
 
 Route::get('tables',function(){
