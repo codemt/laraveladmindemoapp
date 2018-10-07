@@ -20,6 +20,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
 
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -192,29 +193,21 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
 
-    <!-- Main content -->
-    <section class="content">
-        @include('layouts.dashboard-widgets') 
-      <!-- Info boxes -->
-      <!-- /.row -->
-      <!-- /.row -->
+        <section class="content">
+                @yield('content')
 
-      <!-- Main row -->
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
+        </section>
   </div>
   <!-- /.content-wrapper -->
-{{-- 
+
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
     <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
-  </footer> --}}
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -432,5 +425,7 @@
 <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
+@yield('scripts');
 </body>
 </html>

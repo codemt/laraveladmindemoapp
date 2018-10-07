@@ -32,6 +32,7 @@ Route::get('admin/students/all','AdminController@getStudents')->name('admin.stud
 // create new students
 Route::get('admin/students/create','AdminController@createNew')->name('admin.students.create');
 Route::post('admin/students/create','AdminController@store')->name('admin.students.store');
+Route::get('admin/students/fees','FeesController@index')->name('admin.students.fees');
 
 
 // edit students

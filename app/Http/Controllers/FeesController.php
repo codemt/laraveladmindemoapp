@@ -9,8 +9,12 @@ class FeesController extends Controller
     //
     public function index(){
 
-            $fees = Fees::All();
-            return view('fees.index')->with('fees',$fees);
+
+
+            return view('students.fees');
+
+            // $fees = Fees::All();
+            // return view('fees.index')->with('fees',$fees);
 
     }
 }
