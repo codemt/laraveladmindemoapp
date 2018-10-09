@@ -41,7 +41,7 @@ class LoginController extends Controller
     public function logout(Request $request) {
        //  dd($request->all());
         
-
+       Auth::logout();   
         return redirect('/admin/login');
 
         
