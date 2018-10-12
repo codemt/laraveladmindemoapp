@@ -48,6 +48,12 @@ Route::get('admin/students/fees','FeesController@create')->name('admin.fees.crea
 Route::post('admin/students/fees/add','FeesController@store')->name('admin.fees.store');
 Route::get('admin/emails/dashboard','EmailController@index')->name('admin.emails.dashboard');
 
+
+// view date wise fees
+Route::get('admin/students/fees/view','FeesController@view')->name('admin.fees.view');
+// get total fees
+Route::get('admin/students/totalfees','FeesController@getTotalFees')->name('admin.getTotalFees');
+
 Route::get('tables',function(){
 
     return view('layouts.display_table');

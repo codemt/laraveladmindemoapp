@@ -11,7 +11,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Fees Master Table  </h3>
-              <h3>Total Fees Collection </h3> <input type="number" name="" id="totalfees" disabled />
+              <h3>Total Fees Collection </h3>
               <div class="form-group">
                 <label> Select Range </label>
     
@@ -54,16 +54,16 @@
                   <th>Fees Amount </th>
                   <th>Valid Till </th>
                 </tr>
-                @foreach($fees as $fee)
+              
                 <tr>
-                <td> {{  $fee->name }}</td>
-                <td> <span class="label label-success"> {{ $fee->course_name }} </span>  </td>
-                <td> {{ $fee->duration  }} </td>
-                <td> {{ $fee->fee_amount }} </td>
-                <td> {{ $fee->valid_till }} </td> 
+                <td></td>
+                <td> <span class="label label-success"></span>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td></td> 
                   
                 </tr>
-                @endforeach
+                
               </table>
             </div>
             <!-- /.box-body -->
@@ -147,8 +147,7 @@
                                   success: function(result){
 
                                     console.log(result);
-
-                                    $('#totalfees').val(result['0']['total']);
+                                    $('#data').val(result[0]);
                                     $('.alert').show();
                                     $('.alert').html(result.success);
                                   },

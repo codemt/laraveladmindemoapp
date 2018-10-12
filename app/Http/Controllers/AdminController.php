@@ -61,8 +61,6 @@ class AdminController extends Controller
 
         $update = Students::find($request->id);
         $update->name = $request->input('name');
-        $update->last_name = $request->input('first_name');
-        $update->middle_name = $request->input('middle_name');
         $update->course_name = $request->input('course_name');
         $update->student_email = $request->input('student_email');
         $update->parent_email = $request->input('parent_email');

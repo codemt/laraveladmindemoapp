@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Fees;
+use Illuminate\Support\Facades\DB;
 use App\Students;
+use Auth;
 use Carbon\Carbon;
 class FeesController extends Controller
 {
@@ -18,6 +20,16 @@ class FeesController extends Controller
 
             // $fees = Fees::All();
             // return view('fees.index')->with('fees',$fees);
+
+    }
+
+    public function view(){
+
+
+          // view date wise fees.
+          $fees = Fees::All();
+          return view('fees.view')->with('fees',$fees);
+
 
     }
     public function create(){
@@ -38,8 +50,8 @@ class FeesController extends Controller
           $column = 'name'; // This is the name of the column you wish to search
 
         $getDetails = Students::where($column , '=', $student_name)->get();
-         //   $get_student_id = Students::find($student_name);
-             //   return $getDetails;
+          $get_student_id = Students::find($student_name);
+            //  return $getDetails;
             $student_id = $getDetails['0']['id'];
             $duration = $request->duration;
           //  return $duration;
@@ -47,7 +59,7 @@ class FeesController extends Controller
             $valid_till = $request->valid_till;
             $student_name = $request->student_name;
             $course_name = $request->course_name;
-            $start_date = \Carbon\Carbon::createFromFormat('d/m/Y', $valid_till);
+             $start_date = \Carbon\Carbon::createFromFormat('m/d/Y', $valid_till);
             // return $start_date;   
 
             $fees = new Fees();
@@ -59,9 +71,30 @@ class FeesController extends Controller
             $fees->valid_till = $start_date;
 
             $fees->save();
-        //     $save->valid_till = $valid_till;
+        //     $save->valid_till = $start_date;
               return $fees;
             
+
+    }
+
+    public function getTotalFees(Request $request){
+
+
+      $valid_till = $request->valid_till;
+      $start_date = $request->start_date;
+
+       //  return $valid_till;
+       $start = \Carbon\Carbon::createFromFormat('m/d/Y', $start_date);
+       $end_date = \Carbon\Carbon::createFromFormat('m/d/Y', $valid_till);
+
+      $getfees = DB::table('fees')
+            ->select(DB::raw('SUM(fee_amount) as total'))
+            ->whereBetween('valid_till',array($start,$end_date))
+            ->get();
+              
+
+        return $getfees;
+
 
     }
 }
