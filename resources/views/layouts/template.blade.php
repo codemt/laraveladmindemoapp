@@ -144,6 +144,8 @@
             <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
             <li><a href="{{ route('admin.students.create') }}"><i class="fa fa-circle-o"></i> Add New </a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Inquires </a></li>
+            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Batches </a></li>
+            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Discontinued </a></li>
           <li><a href="{{ route('admin.fees.create')}}"><i class="fa fa-circle-o"></i> Add Fees </a></li>
             <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Test Series</a></li>
           </ul>

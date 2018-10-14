@@ -11,7 +11,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Fees Master Table  </h3>
-              <h3>Total Fees Collection </h3> <input type="number" name="" id="totalfees" disabled />
+              <h3>Total Fees Collection </h3>
               <div class="form-group">
                 <label> Select Range </label>
     
@@ -31,7 +31,8 @@
                   </div>
                 <!-- /.input group -->
                 <!-- GET Values -->
-                <button id="get"> SUBMIT </button>
+                <button id="get"> SUBMIT </button> <br>
+                <p id="totalfees"     style="text-align: center">   </p>
               </div>
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -45,7 +46,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+              <table class="table table-hover" id="location">
                 
                 <tr>
                   <th> Name </th> 
@@ -54,16 +55,11 @@
                   <th>Fees Amount </th>
                   <th>Valid Till </th>
                 </tr>
-                @foreach($fees as $fee)
-                <tr>
-                <td> {{  $fee->name }}</td>
-                <td> <span class="label label-success"> {{ $fee->course_name }} </span>  </td>
-                <td> {{ $fee->duration  }} </td>
-                <td> {{ $fee->fee_amount }} </td>
-                <td> {{ $fee->valid_till }} </td> 
+                <tr id="tabledata">
+              
                   
                 </tr>
-                @endforeach
+               
               </table>
             </div>
             <!-- /.box-body -->
@@ -146,11 +142,29 @@
                                   },
                                   success: function(result){
 
-                                    console.log(result);
 
-                                    $('#totalfees').val(result['0']['total']);
-                                    $('.alert').show();
-                                    $('.alert').html(result.success);
+                                    console.log(result);
+                                    var data = JSON.parse(result);
+                                  var result1 = data.getFees;
+                                  var result2 = data.getTotal;
+                                    console.log(result1);
+                                    console.log(result2);
+                                    var trHTML = '';
+                
+                                    $.each(result1, function (i, item) {
+                                        
+                                        trHTML += '<tr><td>' + result1[i]['name'] + '</td><td><span class="label label-success">' + result1[i]['course_name'] + '</span></td><td>' + result1[i]['duration'] + '</td></td><td>' + result1[i]['fee_amount'] + '</td></td><td>' + result1[i]['valid_till'] + '</td></tr>';
+                                    });
+        
+                                    $('#location').append(trHTML);
+                                    $('#totalfees').append('Total Fees Collection is INR ' + result2['0']['total']);
+                                    
+
+                                  //  $('#totalfees').val(result['0']['total']);
+                                    //$('.alert').show();
+                                 //   $('.alert').html(result.success);
+
+
                                   },
                                   error: function (data) {
                                     
@@ -158,10 +172,8 @@
                                     console.log('Error:', data);
                                     
                                     }
-                        });
-
-
-
+                  
+                                });         
                       });
 
 

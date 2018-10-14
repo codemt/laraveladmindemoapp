@@ -88,13 +88,25 @@ class FeesController extends Controller
        $end_date = \Carbon\Carbon::createFromFormat('m/d/Y', $valid_till);
 
       $getfees = DB::table('fees')
-            ->select(DB::raw('SUM(fee_amount) as total'))
             ->whereBetween('valid_till',array($start,$end_date))
             ->get();
-              
 
-        return $getfees;
+
+        $getTotal = DB::table('fees')
+        ->select(DB::raw('SUM(fee_amount) as total'))
+        ->whereBetween('valid_till',array($start,$end_date))
+        ->get();
+                      
+
+        return json_encode(array("getFees" => $getfees, "getTotal" => $getTotal));
 
 
     }
 }
+
+
+
+// $getfees = DB::table('fees')
+// ->select(DB::raw('SUM(fee_amount) as total'))
+// ->whereBetween('valid_till',array($start,$end_date))
+// ->get();
