@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Students;
+use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     //
@@ -71,6 +72,19 @@ class AdminController extends Controller
         $update->save();
         $students = Students::All();
         return redirect('admin/students/all')->with('students',$students);
+
+    }
+
+    public function getNames(){
+
+
+        $students = Students::All();
+
+        $getstudentnames = DB::table('students')
+        ->select(DB::raw('name as name'))
+        ->get();
+
+        return $getstudentnames;
 
     }
 

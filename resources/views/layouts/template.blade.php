@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="{{ asset('bower_components/jvectormap/jquery-jvectormap.css')  }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css')   }}">
+  <!-- FONT AWESOME --> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
@@ -141,11 +143,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All </a></li>
+            <li><a href="{{ route('admin.students') }}"><i class="fa fa-circle-o"></i> View All Students </a></li>
             <li><a href="{{ route('admin.students.create') }}"><i class="fa fa-circle-o"></i> Add New </a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Inquires </a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Batches </a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Discontinued </a></li>
           <li><a href="{{ route('admin.fees.create')}}"><i class="fa fa-circle-o"></i> Add Fees </a></li>
             <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Test Series</a></li>
           </ul>
@@ -182,7 +181,12 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul> 
         </li> --}}
-        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span>Fees Master </span> </a> </li>
+        <li> <a href="{{ route('admin.fees.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Fees </span> </a> </li>
+        <li> <a href="{{ route('admin.fees.index') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View All Fees </span> </a> </li>
+        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
+        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span> Batches </span> </a> </li>
+        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span> Inquiries </span> </a> </li>
+        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span>Discountinued  </span> </a> </li>
         <li><a href="{{ route('admin.emails.dashboard')}}"><i class="fa fa-book"></i> <span> Send Emails </span></a></li>
         {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

@@ -22,6 +22,15 @@ class FeesController extends Controller
             // return view('fees.index')->with('fees',$fees);
 
     }
+    public function AllFees(){
+
+
+      $fees = Fees::All();
+      return view('fees.index')->with('fees',$fees);
+
+
+
+    }
 
     public function view(){
 
@@ -44,7 +53,7 @@ class FeesController extends Controller
 
           //return $request;
             $student_name = $request->student_name;
-          //  dd($student_name);
+          // dd($student_name);
 
           // find details of student with there name.
           $column = 'name'; // This is the name of the column you wish to search
@@ -72,7 +81,7 @@ class FeesController extends Controller
 
             $fees->save();
         //     $save->valid_till = $start_date;
-              return $fees;
+              return redirect('admin/students/fees/all');
             
 
     }

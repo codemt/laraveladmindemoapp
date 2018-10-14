@@ -32,6 +32,7 @@
                 <!-- /.input group -->
                 <!-- GET Values -->
                 <button id="get"> SUBMIT </button> <br>
+                {{-- <button id="clear"> CLEAR </button> <br> --}}
                 <p id="totalfees"     style="text-align: center">   </p>
               </div>
               <div class="box-tools">
@@ -55,7 +56,7 @@
                   <th>Fees Amount </th>
                   <th>Valid Till </th>
                 </tr>
-                <tr id="tabledata">
+                <tr>
               
                   
                 </tr>
@@ -72,6 +73,10 @@
 
           var startdate;
           var valid_till;
+
+          
+
+
        $('#dp3').datepicker({
                 autoclose: true
         })
@@ -125,6 +130,8 @@
 
                     });
 
+                   
+
 
                       $('#get').click(function(){
 
@@ -153,11 +160,12 @@
                 
                                     $.each(result1, function (i, item) {
                                         
-                                        trHTML += '<tr><td>' + result1[i]['name'] + '</td><td><span class="label label-success">' + result1[i]['course_name'] + '</span></td><td>' + result1[i]['duration'] + '</td></td><td>' + result1[i]['fee_amount'] + '</td></td><td>' + result1[i]['valid_till'] + '</td></tr>';
+                                        trHTML += '<tbody id="tabledata"><tr><td>' + result1[i]['name'] + '</td><td><span class="label label-success">' + result1[i]['course_name'] + '</span></td><td>' + result1[i]['duration'] + '</td></td><td>' + result1[i]['fee_amount'] + '</td></td><td>' + result1[i]['valid_till'] + '</td></tr></tbody>';
                                     });
         
-                                    $('#location').append(trHTML);
-                                    $('#totalfees').append('Total Fees Collection is INR ' + result2['0']['total']);
+                                     
+                                    $('#location').html(trHTML);
+                                    $('#totalfees').html('Total Fees Collection is INR ' + result2['0']['total']);
                                     
 
                                   //  $('#totalfees').val(result['0']['total']);
@@ -176,6 +184,14 @@
                                 });         
                       });
 
+
+                       $('#clear').click(function(e){
+
+                         e.preventDefault();
+                          $('#tabledata').remove();
+
+
+                        })
 
     
         

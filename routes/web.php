@@ -51,8 +51,16 @@ Route::get('admin/emails/dashboard','EmailController@index')->name('admin.emails
 
 // view date wise fees
 Route::get('admin/students/fees/view','FeesController@view')->name('admin.fees.view');
+
+// view all fees collections.
+Route::get('admin/students/fees/all','FeesController@AllFees')->name('admin.fees.index');
+
 // get total fees
 Route::get('admin/students/totalfees','FeesController@getTotalFees')->name('admin.getTotalFees');
+
+
+// get Student Names
+Route::get('admin/students/getnames','AdminController@getNames')->name('admin.getStudentNames');
 
 Route::get('tables',function(){
 
