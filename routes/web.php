@@ -62,6 +62,21 @@ Route::get('admin/students/totalfees','FeesController@getTotalFees')->name('admi
 // get Student Names
 Route::get('admin/students/getnames','AdminController@getNames')->name('admin.getStudentNames');
 
+
+// Inquiries
+Route::get('admin/students/inquiry/index','InquiryController@index')->name('admin.inquiry.index');
+Route::get('admin/students/inquiry','InquiryController@create')->name('admin.inquiry');
+Route::post('admin/students/inquiry','InquiryController@store')->name('inquiry.store');
+
+
+
+// Batches.
+Route::get('admin/students/batches/create','BatchController@create')->name('admin.batch.create');
+Route::post('admin/students/batches','BatchController@store')->name('admin.batch.store');
+
+Route::get('admin/students/batches/view','BatchController@index')->name('admin.batch.view');
+
+
 Route::get('tables',function(){
 
     return view('layouts.display_table');

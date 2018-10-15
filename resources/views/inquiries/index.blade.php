@@ -5,7 +5,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Students  Database Table</h3>
+          <h3 class="box-title">Inquiries Master </h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -22,16 +22,23 @@
           <table class="table table-hover">
              
             <tr>
-              <th>Monday Batch </th>
-              <th>Tuesday Batch</th>
-              <th>Wednesday Batch</th>
-              <th>Thursday Batch</th>
-              <th>Friday Batch</th>
-              <th>Satuday Batch</th>
-              <th>Sunday Batch  </th>
-              
+              <th>ID</th>
+              <th>Name</th>
+              <th>Course Name  </th>
+              <th> Mobile </th>
+              <th> Email </th>
+              <th>  Created at </th>
             </tr>
-           
+            @foreach($inquiries as $inquiry)
+            <tr>
+            <td> {{ $inquiry->id }}</td>
+              <td>{{ $inquiry->name }}</td>
+              <td><span class="label label-success">{{$inquiry->course_name}}</span></td>
+              <td>{{ $inquiry->mobile }}</td>
+              <td>{{ $inquiry->email }}</td>
+              <td>{{ $inquiry->created_at }}</td>
+            </tr>
+            @endforeach
           </table>
         </div>
         <!-- /.box-body -->
