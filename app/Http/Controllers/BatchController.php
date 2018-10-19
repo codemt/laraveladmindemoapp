@@ -9,43 +9,162 @@ use Illuminate\Support\Facades\DB;
 
 class BatchController extends Controller
 {
-    //
+    
 
     public function index(){
 
 
         // Monday
-        $getMondayBatch = DB::table('batches')
-        ->select('student_id')
+        $getMondayBatch = DB::table('students')
+        ->select('name')
+        ->leftjoin('batches','batches.student_id','=','students.id')
         ->where('batch_name','Monday')
         ->get();
 
 
         // Tuesday
-        $getSundayBatch = DB::table('batches')
-        ->select('student_id')
-        ->where('batch_name','Sunday')
+        $getTuesdayBatch = DB::table('students')
+        ->select('name')
+        ->leftjoin('batches','batches.student_id','=','students.id')
+        ->where('batch_name','tuesday')
         ->get();
 
-        // Wednesday
+         // Wednesday
 
+        $getWednesdayBatch = DB::table('students')
+        ->select('name')
+        ->leftjoin('batches','batches.student_id','=','students.id')
+        ->where('batch_name','Wednesday')
+        ->get();
 
-        // Thursday
+         // Thursday
+
+         $getThursdayBatch = DB::table('students')
+         ->select('name')
+         ->leftjoin('batches','batches.student_id','=','students.id')
+         ->where('batch_name','Thursday')
+         ->get();
 
 
         // Friday
 
+        $getFridayBatch = DB::table('students')
+        ->select('name')
+        ->leftjoin('batches','batches.student_id','=','students.id')
+        ->where('batch_name','Friday')
+        ->get();
+
     
-        // Saturday
+         // Saturday
 
-            return $getSundayBatch;
+         $getSaturdayBatch = DB::table('students')
+         ->select('name')
+         ->leftjoin('batches','batches.student_id','=','students.id')
+         ->where('batch_name','Saturday')
+         ->get();
 
-            return view('batches.index');
+         // Sunday
+
+         $getSundayBatch = DB::table('students')
+         ->select('name')
+         ->leftjoin('batches','batches.student_id','=','students.id')
+         ->where('batch_name','Sunday')
+         ->get();
+
+
+        
+         $monday = array();
+         $tuesday = array();
+         $wednesday = array();
+         $thursday = array();
+         $friday = array();
+         $saturday = array();
+         $sunday = array();
+
+         $mondaybatch = json_decode($getMondayBatch,true);
+         $tuesdaybatch = json_decode($getTuesdayBatch,true);
+         $wednesdaybatch = json_decode($getWednesdayBatch,true);
+         $thursdaybatch = json_decode($getWednesdayBatch,true);
+         $fridaybatch = json_decode($getFridayBatch,true);
+         $saturdaybatch = json_decode($getSaturdayBatch,true);
+         $sundaybatch = json_decode($getSundayBatch,true);
+
+
+         foreach($mondaybatch as $value)
+        {
+
+               array_push($monday,$value['name']);
+
+        }
+        foreach($tuesdaybatch as $value)
+        {
+
+               array_push($tuesday,$value['name']);
+
+        }
+        foreach($wednesdaybatch as $value)
+        {
+
+               array_push($wednesdaybatch,$value['name']);
+
+        }
+        foreach($thursdaybatch as $value)
+        {
+
+               array_push($thursday,$value['name']);
+
+        }
+        foreach($fridaybatch as $value)
+        {
+
+               array_push($friday,$value['name']);
+
+        }
+        foreach($saturdaybatch as $value)
+        {
+
+               array_push($saturday,$value['name']);
+
+        }
+        foreach($sundaybatch as $value)
+        {
+
+               array_push($sunday,$value['name']);
+
+        }
+
+        // for($i=0;$i<=count($getMondayBatch);$i++)
+        // {
+
+        //     $monday = array_push($monday,$value[$i]);
+
+        // }
+      
+
+        $monday = json_encode($monday,JSON_FORCE_OBJECT);
+        $tuesday = json_encode($tuesday,JSON_FORCE_OBJECT);
+        $wednesday = json_encode($wednesday,JSON_FORCE_OBJECT);
+        $thursday = json_encode($thursday,JSON_FORCE_OBJECT);
+        $friday = json_encode($friday,JSON_FORCE_OBJECT);
+        $saturday = json_encode($saturday,JSON_FORCE_OBJECT);
+        $sunday = json_encode($sunday,JSON_FORCE_OBJECT);
+
+
+       $mondaykey = array('Monday'); 
+       
+       $mondaybatches = array_fill_keys($mondaykey,$monday);
+       
+          
+     //  array_push($allBatches['monday'],$monday);
+      return json_encode($mondaybatches,true);
+
+     // return view('batches.index',compact('mondaybatches','tuesday','wednesday','thursday','friday','saturday','sunday'));
 
 
     }
 
-    public function create(){
+    public function create()
+    {
 
 
 
