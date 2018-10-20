@@ -150,15 +150,15 @@ class BatchController extends Controller
         $sunday = json_encode($sunday,JSON_FORCE_OBJECT);
 
 
-       $mondaykey = array('Monday'); 
+    //   $mondaykey = array('Monday'); 
        
-       $mondaybatches = array_fill_keys($mondaykey,$monday);
+      // $mondaybatches = array_fill_keys($mondaykey,$monday);
        
           
      //  array_push($allBatches['monday'],$monday);
-      return json_encode($mondaybatches,true);
+     // return json_encode($mondaybatches,true);
 
-     // return view('batches.index',compact('mondaybatches','tuesday','wednesday','thursday','friday','saturday','sunday'));
+      return view('batches.index',compact('monday','tuesday','wednesday','thursday','friday','saturday','sunday'));
 
 
     }

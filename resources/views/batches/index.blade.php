@@ -23,20 +23,36 @@
              
             <tr>
               <th>Monday Batch </th>
-              <th> Tuesday Batch </th>
-              <th> Wednesday Batch </th>
-              <th> Thursday Batch </th>
-              <th> Friday Batch </th>
-              <th> Saturday Batch </th>
-              <th> Sunday Batch </th>
             </tr>
-            @foreach(json_encode($mondaybatches['Monday'],true) as $value['Monday'])
+         
             <tr>
+              @foreach(json_decode($monday,true) as $value)
+                   <td> {{ $value }}</td>
+                   @endforeach
+            </tr>
+            <tr>
+              <th>Tuesday Batch </th>
+            </tr>
+           
+            <tr>
+                @foreach(json_decode($tuesday,true) as $value)
               
                    <td> {{ $value }}</td>
-           
+                   @endforeach
             </tr>
-            @endforeach
+           
+              <tr>
+                  <th>Thursday Batch </th>
+                </tr>
+               
+                <tr>
+                    @foreach(json_decode($thursday,true) as $value)
+                  
+                       <td> {{ $value }}</td>
+                       @endforeach
+                </tr>
+           
+            
             
           </table>
         </div>
