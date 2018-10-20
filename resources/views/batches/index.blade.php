@@ -18,44 +18,150 @@
           </div>
         </div>
         <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-          <table class="table table-hover">
-             
-            <tr>
-              <th>Monday Batch </th>
-            </tr>
-         
-            <tr>
-              @foreach(json_decode($monday,true) as $value)
-                   <td> {{ $value }}</td>
-                   @endforeach
-            </tr>
-            <tr>
-              <th>Tuesday Batch </th>
-            </tr>
-           
-            <tr>
-                @foreach(json_decode($tuesday,true) as $value)
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class="box table table-hover">
+                   
+                  <tr>
+                    <th>Monday Batch </th>
+                  </tr>
+                  @foreach(json_decode($monday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
               
-                   <td> {{ $value }}</td>
-                   @endforeach
-            </tr>
-           
-              <tr>
-                  <th>Thursday Batch </th>
-                </tr>
-               
-                <tr>
-                    @foreach(json_decode($thursday,true) as $value)
-                  
-                       <td> {{ $value }}</td>
-                       @endforeach
-                </tr>
-           
-            
-            
-          </table>
+
+
+
         </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Tuesday Batch </th>
+                  </tr>
+                  @foreach(json_decode($tuesday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Wednesday Batch </th>
+                  </tr>
+                  @foreach(json_decode($wednesday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Thursday Batch </th>
+                  </tr>
+                  @foreach(json_decode($thursday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Friday Batch </th>
+                  </tr>
+                  @foreach(json_decode($friday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Satuday Batch </th>
+                  </tr>
+                  @foreach(json_decode($saturday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+        <div class="box-body  col-md-2">
+
+            <div class="box-body table-responsive no-padding">
+                <table class=" box table table-hover">
+                   
+                  <tr>
+                    <th>Sunday Batch </th>
+                  </tr>
+                  @foreach(json_decode($sunday,true) as $value)
+                  <tr>  
+                     
+                   
+                         <td> {{ $value }}</td>
+                       
+                  </tr> 
+                  @endforeach   
+                </table>
+              </div>
+
+        </div>
+       
         <!-- /.box-body -->
       </div>
       <!-- /.box -->

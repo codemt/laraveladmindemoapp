@@ -6,10 +6,10 @@
     
 @endif
 
-<form action="{{ route('admin.batch.store') }}" method="post" class="container">
+<form action="{{ route('admin.batch.update') }}" method="post" class="container">
         {{ csrf_field() }}
     <fieldset>
-    <legend> Add Students To Batches </legend>
+    <legend> Update Batch Students </legend>
     <div class="form-group">
       <label for="exampleSelect1"> Select Student Name  </label>
       <select class="form-control" id="exampleSelect1" name="student_name">
@@ -19,6 +19,7 @@
       <div class="form-group">
             <label for="exampleInputEmail1">Enter Batch Name </label>
             <select class="form-control" id="batchname" name="batch_name">
+       
                 </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -68,38 +69,36 @@
 
                           }); 
 
-
-                            $.ajax({
-
-
-                                        url: "{{ route('admin.batch.get') }}",
-                                        method: 'get',
-                                        success: function(result){
+                          $.ajax({
 
 
-                                        console.log(result);
+                                    url: "{{ route('admin.batch.get') }}",
+                                    method: 'get',
+                                    success: function(result){
 
-                                        var trHTML;
-                                        $.each(result, function (i, item) {
-                                            
-                                            trHTML += '<option>' + result[i] + '</option>';
-                                        });
 
-                                        $('#batchname').append(trHTML);
+                                    console.log(result);
+                                    
+                                    var trHTML;
+                                    $.each(result, function (i, item) {
+                                        
+                                        trHTML += '<option>' + result[i] + '</option>';
+                                    });
 
+                                    $('#batchname').append(trHTML);
 
 
 
-                                        },
-                                        error: function (data) {
 
-                                        console.log(data);
-                                        console.log('Error:', data);
+                                    },
+                                    error: function (data) {
 
-                                        }
+                                    console.log(data);
+                                    console.log('Error:', data);
+
+                                    }
 
                             }); 
-
 
 
 

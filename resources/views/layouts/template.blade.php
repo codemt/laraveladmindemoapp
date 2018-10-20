@@ -192,7 +192,8 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="{{ route('admin.batch.view') }}"><i class="fa fa-circle-o"></i> View Batches </a></li>
-              <li><a href="{{ route('admin.batch.create') }}"><i class="fa fa-circle-o"></i> Update Batch </a></li>
+              <li><a href="{{ route('admin.batch.create') }}"><i class="fa fa-circle-o"></i> Add Students  </a></li>
+              <li><a href="{{ route('admin.batch.edit') }}"><i class="fa fa-circle-o"></i> Update Batch  </a></li>
             
             </ul>
           </li>

@@ -73,8 +73,10 @@ Route::post('admin/students/inquiry','InquiryController@store')->name('inquiry.s
 // Batches.
 Route::get('admin/students/batches/create','BatchController@create')->name('admin.batch.create');
 Route::post('admin/students/batches','BatchController@store')->name('admin.batch.store');
-
+Route::get('admin/students/batches/edit','BatchController@editBatch')->name('admin.batch.edit');
+Route::post('admin/students/batches/update','BatchController@update')->name('admin.batch.update');
 Route::get('admin/students/batches/view','BatchController@index')->name('admin.batch.view');
+Route::get('admin/students/batches/get','BatchController@getBatches')->name('admin.batch.get');
 
 
 Route::get('tables',function(){

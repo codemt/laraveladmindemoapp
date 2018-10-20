@@ -84,7 +84,7 @@ class BatchController extends Controller
          $mondaybatch = json_decode($getMondayBatch,true);
          $tuesdaybatch = json_decode($getTuesdayBatch,true);
          $wednesdaybatch = json_decode($getWednesdayBatch,true);
-         $thursdaybatch = json_decode($getWednesdayBatch,true);
+         $thursdaybatch = json_decode($getThursdayBatch,true);
          $fridaybatch = json_decode($getFridayBatch,true);
          $saturdaybatch = json_decode($getSaturdayBatch,true);
          $sundaybatch = json_decode($getSundayBatch,true);
@@ -105,7 +105,7 @@ class BatchController extends Controller
         foreach($wednesdaybatch as $value)
         {
 
-               array_push($wednesdaybatch,$value['name']);
+               array_push($wednesday,$value['name']);
 
         }
         foreach($thursdaybatch as $value)
@@ -199,5 +199,62 @@ class BatchController extends Controller
                 return back()->with('Status','Added Successfully');
                  
     }
+    public function update(Request $request){
+
+
+     // return $request;
+      $student_name = $request->student_name;
+      //$batch_name = $request->batch_name;
+     // dd($batch_name);
+
+      // find details of student with there name.
+      $column = 'name'; // This is the name of the column you wish to search
+
+    $getDetails = Students::where($column , '=', $student_name)->get();
+      $get_student_id = Students::find($student_name);
+         //return $getDetails;
+        $student_id = $getDetails['0']['id'];
+
+      
+
+        $student_column = 'student_id';
+
+        $get_batch_details = Batches::where($student_column,'=',$student_id)->first();
+
+       // return $get_batch;
+      //  $get_batch = Batches::find($student_id);
+        //return $get_batch;
+        $get_batch_details->batch_name = $request->batch_name;
+ 
+ 
+        $get_batch_details->save();
+
+     
+
+       return back()->with('Status','Added Successfully');
+        
+}
+
+public function editBatch(){
+
+
+      return view('batches.update');
+
+
+
+}
+
+public function getBatches(){
+
+
+      $batchnames = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+
+
+      return $batchnames;
+
+
+
+
+}
 
 }
