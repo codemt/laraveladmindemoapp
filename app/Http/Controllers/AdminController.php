@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Students;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 class AdminController extends Controller
 {
     //
@@ -43,6 +44,24 @@ class AdminController extends Controller
         $new->address = $request->input('address');
 
         $new->save();
+
+
+        $data = [
+
+            'title'=>'New Admission Done',
+            'name'=>$request->input('name'),
+            'email'=>$request->input('student_email'),
+            'mobile'=>$request->input('student_mobile'),
+          
+
+     ];
+
+     Mail::send('emails.newadmission',$data,function($message){
+
+
+        $message->to('mithilesh.tarkar@ves.ac.in','Mithilesh')->subject('Hello From Team');
+
+     });
 
         $students = Students::All();
         return redirect('admin/students/all')->with('students',$students);
