@@ -79,6 +79,14 @@ Route::get('admin/students/batches/view','BatchController@index')->name('admin.b
 Route::get('admin/students/batches/get','BatchController@getBatches')->name('admin.batch.get');
 
 
+
+// Email Templates.
+Route::get('admin/emails/template1',function(){
+
+
+    return view('emails.template');
+
+});
 Route::get('tables',function(){
 
     return view('layouts.display_table');

@@ -56,12 +56,18 @@ class AdminController extends Controller
 
      ];
 
-     Mail::send('emails.newadmission',$data,function($message){
+     Mail::send('emails.template',$data,function($message){
 
 
         $message->to('mithilesh.tarkar@ves.ac.in','Mithilesh')->subject('Hello From Team');
 
      });
+    //  Mail::send('emails.newadmission',$data,function($message){
+
+
+    //     $message->to('mithilesh.tarkar@ves.ac.in','Mithilesh')->subject('Hello From Team');
+
+    //  });
 
         $students = Students::All();
         return redirect('admin/students/all')->with('students',$students);
