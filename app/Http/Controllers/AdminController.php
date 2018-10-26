@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Students;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\CreateStudentsRequest;
+
+
 class AdminController extends Controller
 {
     //
@@ -31,8 +34,10 @@ class AdminController extends Controller
         return view('students.create');
 
     }
-    public function store(Request $request)
+    public function store(CreateStudentsRequest $request)
     {
+
+        return $request;
         $new = new Students();
 
         $new->name = $request->input('name');
@@ -56,12 +61,12 @@ class AdminController extends Controller
 
      ];
 
-     Mail::send('emails.template',$data,function($message){
+    //  Mail::send('emails.template',$data,function($message){
 
 
-        $message->to('mithilesh.tarkar@ves.ac.in','Mithilesh')->subject('Hello From Team');
+    //     $message->to('ashikshibili@gmail.com','Ashik')->subject('Hello From Team');
 
-     });
+    //  });
     //  Mail::send('emails.newadmission',$data,function($message){
 
 
