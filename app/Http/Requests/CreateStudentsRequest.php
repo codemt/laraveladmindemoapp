@@ -27,6 +27,8 @@ class CreateStudentsRequest extends FormRequest
 
         \Log::info($request);
        // dd(print_r(($request->all())));
+
+       
         return [
             'name'         => 'required',
             'course_name'  => 'required',

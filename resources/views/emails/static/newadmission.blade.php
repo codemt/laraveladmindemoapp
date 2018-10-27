@@ -37,7 +37,7 @@
                     <div class="profile-back"></div><img class="rounded-circle profile-pic" src="{{ asset('img/logo1.png')}}" />
                     <h3 class="profile-name"> Welcome Aboard!</h3>
                     <p class="profile-bio">
-                        Dear {{ $name }} 
+                      Dear ABC , 
                      We are pleased to have you onboarded with us. We Wish you all the best in your musical adventures
                     </p>
                     <p class="profile-bio"> Connect with us on .</p>

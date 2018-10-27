@@ -87,6 +87,18 @@ Route::get('admin/emails/template1',function(){
     return view('emails.template');
 
 });
+Route::get('admin/emails/template/inquiry',function(){
+
+
+    return view('emails.static.inquiryemail');
+
+});
+Route::get('admin/emails/template/newadmission',function(){
+
+
+    return view('emails.static.newadmission');
+
+});
 Route::get('tables',function(){
 
     return view('layouts.display_table');

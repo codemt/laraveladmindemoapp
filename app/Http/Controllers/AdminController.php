@@ -7,7 +7,8 @@ use App\Students;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CreateStudentsRequest;
-
+use App\Events\CreateAdmissionEvent;
+use Event;
 
 class AdminController extends Controller
 {
@@ -37,45 +38,16 @@ class AdminController extends Controller
     public function store(CreateStudentsRequest $request)
     {
 
-        return $request;
-        $new = new Students();
+       
+        $admission_data = $request->all();
+      //  $admission_data['user'] = auth()->user();
 
-        $new->name = $request->input('name');
-        $new->course_name = $request->input('course_name');
-        $new->student_email = $request->input('student_email');
-        $new->parent_email = $request->input('parent_email');
-        $new->student_mobile = $request->input('student_mobile');
-        $new->parent_mobile = $request->input('parent_mobile');
-        $new->address = $request->input('address');
-
-        $new->save();
-
-
-        $data = [
-
-            'title'=>'New Admission Done',
-            'name'=>$request->input('name'),
-            'email'=>$request->input('student_email'),
-            'mobile'=>$request->input('student_mobile'),
-          
-
-     ];
-
-    //  Mail::send('emails.template',$data,function($message){
-
-
-    //     $message->to('ashikshibili@gmail.com','Ashik')->subject('Hello From Team');
-
-    //  });
-    //  Mail::send('emails.newadmission',$data,function($message){
-
-
-    //     $message->to('mithilesh.tarkar@ves.ac.in','Mithilesh')->subject('Hello From Team');
-
-    //  });
-
-        $students = Students::All();
-        return redirect('admin/students/all')->with('students',$students);
+       Event::fire(new CreateAdmissionEvent($admission_data));
+        
+    
+       return response()->json(['success'=>true,'redirect'=>route('admin.students')]);
+        // $students = Students::All();
+        // return redirect('admin/students/all')->with('students',$students);
             
 
     }

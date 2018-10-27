@@ -16,7 +16,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/cards/admission.css') }}">  
+  <link rel="stylesheet" href="{{ asset('css/cards/profile-card.css') }}">  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,10 +35,10 @@
 
             <div class="profile-card">
                     <div class="profile-back"></div><img class="rounded-circle profile-pic" src="{{ asset('img/logo1.png')}}" />
-                    <h3 class="profile-name"> Welcome Aboard!</h3>
+                    <h3 class="profile-name"> Thank you for your Inquiry</h3>
                     <p class="profile-bio">
-                        Dear {{ $name }} 
-                     We are pleased to have you onboarded with us. We Wish you all the best in your musical adventures
+                      Dear ABC , 
+                     We have received your interest for Guitar Training with us, and we will get back to you.
                     </p>
                     <p class="profile-bio"> Connect with us on .</p>
                     <ul class="social-list">
