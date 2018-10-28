@@ -79,6 +79,11 @@ Route::get('admin/students/batches/view','BatchController@index')->name('admin.b
 Route::get('admin/students/batches/get','BatchController@getBatches')->name('admin.batch.get');
 
 
+// Online Attendance.
+Route::get('admin/students/attendance/view','AttendanceController@index')->name('admin.attendance.view');
+Route::get('admin/students/attendance/create','AttendanceController@show')->name('admin.attendance.create');
+Route::post('admin/students/attendance','AttendanceController@store')->name('admin.attendance.store');
+
 
 // Email Templates.
 Route::get('admin/emails/template1',function(){

@@ -17,6 +17,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css')   }}">
   <!-- FONT AWESOME --> 
+
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{ asset('plugins/iCheck/all.css') }}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
@@ -185,6 +188,19 @@
         <li> <a href="{{ route('admin.fees.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Fees </span> </a> </li>
         <li> <a href="{{ route('admin.fees.index') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View All Fees </span> </a> </li>
         <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fas fa-check"></i> <span> Online Attendance</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.attendance.create') }}"><i class="fas fa-circle-o"></i> New Attendance </a></li>
+            <li><a href="{{ route('admin.attendance.view') }}"><i class="fa fa-circle-o"></i> View Attendance  </a></li>
+          
+          </ul>
+        </li>
         <li class="treeview">
             <a href="#">
               <i class="fa fa-folder"></i> <span> Batches</span>
@@ -457,6 +473,7 @@
 <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" integrity="sha256-xykLhwtLN4WyS7cpam2yiUOwr709tvF3N/r7+gOMxJw=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
