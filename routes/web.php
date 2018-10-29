@@ -80,7 +80,7 @@ Route::get('admin/students/batches/get','BatchController@getBatches')->name('adm
 
 
 // Online Attendance.
-Route::get('admin/students/attendance/view','AttendanceController@index')->name('admin.attendance.view');
+Route::get('admin/students/attendance/view','AttendanceController@getAllAttendanceData')->name('admin.attendance.view');
 Route::get('admin/students/attendance/create','AttendanceController@show')->name('admin.attendance.create');
 Route::post('admin/students/attendance','AttendanceController@store')->name('admin.attendance.store');
 

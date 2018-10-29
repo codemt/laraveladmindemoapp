@@ -24,19 +24,16 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Course</th>
-              <th>Student Email</th>
-              <th>Parent Email</th>
-              <th>Student Number</th>
-              <th>Parent Number </th>
-              <th> Address </th>
+              <th> Last Attendance </th>
             </tr>
-            <tr>
-
-
-
-
-            </tr>
+            @foreach($all_attendance as $value)
+             <tr>
+               <td>{{ $value->id }}</td>
+               <td>{{ $value->student_name }}</td>
+               <td>{{ $value->attended_on }}</td>
+              </tr>
+            @endforeach
+            
           </table>
         </div>
         <!-- /.box-body -->

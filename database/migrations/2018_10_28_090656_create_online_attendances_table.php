@@ -20,6 +20,7 @@ class CreateOnlineAttendancesTable extends Migration
             $table->increments('id');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students');
+            $table->string('student_name');
             $table->date('attended_on');
             $table->timestamps();
 
