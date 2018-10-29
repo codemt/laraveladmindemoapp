@@ -89,9 +89,11 @@ class AttendanceController extends Controller
               //  $attendance_update->attended_on = 
 
 
-            return $today;
+           // return $today;
 
-          // return view('attendance.new');
+           $all_attendance = OnlineAttendance::all();
+
+           return view('attendance.view')->with('all_attendance',$all_attendance);
 
 
     }

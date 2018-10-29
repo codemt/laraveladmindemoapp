@@ -76,6 +76,7 @@ class FeesController extends Controller
             $fees->name = $student_name;
             $fees->course_name = $course_name;
             $fees->duration = $duration;
+            $fees->lectures_alloted = $request->lectures_alloted;
             $fees->fee_amount = $fees_amount;
             $fees->valid_till = $start_date;
 
