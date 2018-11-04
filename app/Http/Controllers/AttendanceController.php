@@ -163,4 +163,42 @@ class AttendanceController extends Controller
            return view('attendance.view',compact('all_attendance','name_details'));
 
     }
+
+    public function viewAttendance($id){
+
+
+
+
+        // $getFeesDetails = Fees::where('student_id','=',$student_id)->get()->toArray();
+        $getAttendance = OnlineAttendance::where('student_id',$id)->get();
+
+        $getLecturesAlloted = Fees::where('student_id',$id)->get()->toArray();
+       
+
+        
+        foreach($getLecturesAlloted as $getLecturesAlloted){
+
+            $totalAlloted = $getLecturesAlloted['lectures_alloted'];
+
+
+        }
+
+        foreach($getAttendance as $value){
+
+
+                $name = $value['student_name'];
+
+        }
+       
+
+
+       
+       //return view('attendance.individual')->compact('totalAlloted',';
+
+       return view('attendance.individual',compact('getAttendance','totalAlloted','name'));
+
+
+
+
+    }
 }

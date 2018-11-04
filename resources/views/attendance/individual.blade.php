@@ -5,8 +5,8 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">View Attendance Table</h3>
-
+                <h3 class="box-title">{{  $name }}'s Attendance Details   </h3>
+                
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
               <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -22,21 +22,23 @@
           <table class="table table-hover">
              
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th> Last Attendance </th>
             </tr>
-            @foreach($all_attendance as $value)
+            @foreach($getAttendance as $value)
              <tr>
-               <td> <a href="{{ url('admin/students/attendance/'.$value->student_id) }}">{{ $value->id }}</td>
-               <td> {{ $value->student_name }}</td>
+               <td>{{ $value->student_name }}</td>
                <td>{{ $value->attended_on }}</td>
               </tr>
             @endforeach
             
-          </table>
+          </table>   
         </div>
         <!-- /.box-body -->
+        <br> 
+        <div class="box-body table-responsive no-padding">
+            
+        <p>  Total Lectures Alloted {{ $totalAlloted }}</p>
       </div>
       <!-- /.box -->
     </div>

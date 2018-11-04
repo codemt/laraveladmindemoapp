@@ -85,6 +85,10 @@ Route::get('admin/students/attendance/create','AttendanceController@show')->name
 Route::post('admin/students/attendance','AttendanceController@store')->name('admin.attendance.store');
 
 
+// view individual attendance details.
+Route::get('admin/students/attendance/{id}','AttendanceController@viewAttendance')->name('admin.individual.view');
+
+
 // Email Templates.
 Route::get('admin/emails/template1',function(){
 
