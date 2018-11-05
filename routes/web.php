@@ -39,9 +39,16 @@ Route::get('admin/students/fees','FeesController@index')->name('admin.students.f
 Route::get('admin/students/edit/{id}','AdminController@editStudents')->name('admin.students.edit');
 Route::post('admin/students/update','AdminController@updateStudents')->name('admin.students.update');
 
+// delete Student Name
+Route::get('admin/students/delete/{id}','AdminController@deleteStudent')->name('admin.students.delete');
+
 
 // add fees dashboard
 Route::get('admin/students/fees/dashboard','FeesController@index')->name('admin.students.fees');
+
+// add Courses 
+Route::get('admin/students/courses/add','CoursesController@create')->name('admin.courses.create');
+Route::get('admin/courses/get','CoursesController@getCourses')->name('admin.courses.get');
 
 // create fee record
 Route::get('admin/students/fees','FeesController@create')->name('admin.fees.create');
@@ -61,6 +68,9 @@ Route::get('admin/students/totalfees','FeesController@getTotalFees')->name('admi
 
 // get Student Names
 Route::get('admin/students/getnames','AdminController@getNames')->name('admin.getStudentNames');
+
+
+
 
 
 // Inquiries

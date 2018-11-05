@@ -90,4 +90,17 @@ class AdminController extends Controller
 
     }
 
+
+    public function deleteStudent($id){
+
+
+
+
+
+            return $id;
+            
+
+
+    }
+
 }

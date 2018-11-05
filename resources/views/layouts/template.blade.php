@@ -186,6 +186,7 @@
           </ul> 
         </li> --}}
         <li> <a href="{{ route('admin.fees.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Fees </span> </a> </li>
+        <li> <a href="{{ route('admin.courses.create') }}"> <i class="fas fa-graduation-cap"></i> <span style="padding-left: 1em">  Add Courses </span> </a> </li>
         <li> <a href="{{ route('admin.fees.index') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View All Fees </span> </a> </li>
         <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
         <li class="treeview">

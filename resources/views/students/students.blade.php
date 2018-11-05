@@ -30,6 +30,7 @@
               <th>Student Number</th>
               <th>Parent Number </th>
               <th> Address </th>
+              <th>Action</th>
             </tr>
             @foreach($students as $student)
             <tr>
@@ -41,6 +42,7 @@
               <td>{{ $student->student_mobile }}</td>
               <td>{{ $student->parent_mobile }}</td>
               <td>{{ $student->address }}</td>
+              <td> <a href="{{ url('admin/students/delete/'.$student->id) }}"> <i class="fas fa-trash-alt"></i> </a> </td>
             </tr>
             @endforeach
           </table>
