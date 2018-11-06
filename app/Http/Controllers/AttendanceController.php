@@ -54,53 +54,77 @@ class AttendanceController extends Controller
          
          //$column_id='student_id';
          
-         $getFeesDetails = Fees::where('student_id','=',$student_id)->get()->toArray();
+         $getFeesDetails = Fees::where('student_id','=',$student_id)->where('is_latest',true)->get()->toArray();
          
-
-
+         
+         
          foreach($getFeesDetails as $value){
 
 
                    $lectures_attended = $value['lectures_attended'];
+                   $lectures_alloted = $value['lectures_alloted'];
                    $update_id = $value['id'];
          }
 
    
          //   print_r($update_id);
 
-         // update lectures attended by Student.
-            $update = Fees::find($update_id);
+        
 
-           $update->lectures_attended = $lectures_attended+1;
-
-            $update->save();
-
-           
-            //get today's Date
-            $today = Carbon::now()->format('m/d/Y') ;
-            $today_date = \Carbon\Carbon::createFromFormat('m/d/Y',$today);
-            // update Attedance Table.
-                $attendance_update = new OnlineAttendance();
-
-                    $attendance_update->student_id = $student_id;
-                    $attendance_update->student_name = $request->student_name;
-                    $attendance_update->attended_on = $today_date; 
+            if($lectures_alloted == $lectures_attended){
 
 
-                    $attendance_update->save();
+                        $fees = Fees::find($update_id);
+                        // $fees->is_latest = false;
+                        $fees->save();
+                        $message = 'Attendance is Full for Alloted Lectures';
+                        return $message;
+            }
+            else{
+
+
+                         // update lectures attended by Student.
+                        $update = Fees::find($update_id);
+
+                        $update->lectures_attended = $lectures_attended+1;
+            
+                        $update->save();
+
+                    //get today's Date
+                     $today = Carbon::now()->format('m/d/Y') ;
+                     $today_date = \Carbon\Carbon::createFromFormat('m/d/Y',$today);
+                     // update Attedance Table.
+
+                        $latest_attendance = true;
+                        $attendance_update = new OnlineAttendance();
+
+                            $attendance_update->student_id = $student_id;
+                            $attendance_update->student_name = $request->student_name;
+                            $attendance_update->attended_on = $today_date; 
+                            $attendance_update->is_latest = $latest_attendance;    
+
+                            $attendance_update->save();
 
               
-              //  $attendance_update->attended_on = 
+                        //  $attendance_update->attended_on = 
 
 
-           // return $today;
+                    // return $today;
 
-           $all_attendance = OnlineAttendance::all();
+                    $all_attendance = OnlineAttendance::all();
 
-            // get 
+                        // get 
 
-            return $student_id;
+                        return $student_id;
 
+
+
+
+
+
+
+            }
+            
           //  return redirect('/admin/students/attendance/'.$student_id);
 
           // return view('attendance.individual')->with('all_attendance',$all_attendance);
@@ -180,16 +204,22 @@ class AttendanceController extends Controller
 
 
         // $getFeesDetails = Fees::where('student_id','=',$student_id)->get()->toArray();
-        $getAttendance = OnlineAttendance::where('student_id',$id)->get();
+        $getAttendance = OnlineAttendance::where('student_id',$id)
+                        ->where('is_latest',true)
+                        ->get();
 
-        $getLecturesAlloted = Fees::where('student_id',$id)->get()->toArray();
+        
+
+        $getLecturesAlloted = Fees::where('student_id',$id)->where('is_latest',true)->get()->toArray();
        
 
+
+      
         
         foreach($getLecturesAlloted as $getLecturesAlloted){
 
             $totalAlloted = $getLecturesAlloted['lectures_alloted'];
-
+            $lectures_attended = $getLecturesAlloted['lectures_attended'];    
 
         }
 
@@ -205,7 +235,7 @@ class AttendanceController extends Controller
        
        //return view('attendance.individual')->compact('totalAlloted',';
 
-       return view('attendance.individual',compact('getAttendance','totalAlloted','name'));
+       return view('attendance.individual',compact('getAttendance','totalAlloted','lectures_attended','name'));
 
 
 

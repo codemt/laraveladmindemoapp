@@ -39,6 +39,8 @@
         <div class="box-body table-responsive no-padding">
             
         <p>  Total Lectures Alloted {{ $totalAlloted }}</p>
+        <br>
+        <p> Total Letures Attended {{ $lectures_attended }}</p>
       </div>
       <!-- /.box -->
     </div>

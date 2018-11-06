@@ -150,17 +150,30 @@
 
                                                  
 
+                                                      if(isFinite(student_id))
+                                                      {
 
-                                                        toastr.success('Attendance Recorded Successfully');
-                                                        toastr.info('Displaying Total Attendance')
+                                                              toastr.success('Attendance Recorded Successfully');
+                                                              toastr.info('Displaying Total Attendance')
                                                   
 
-                                                  window.setTimeout(function(){
+                                                            window.setTimeout(function(){
 
 
-                                                          window.location.assign(student_id);
+                                                                    window.location.assign(student_id);
 
-                                                  },1000);
+                                                            },1000);
+
+
+                                                      }
+                                                      else{
+
+                                                          toastr.error(result);
+                                                          toastr.error('Add New Fees Receipt to Record Attendance');
+
+                                                      }
+
+                                                      
                                                 
 
                                                 //  var url = 'admin/students/attendance/'+student_id;

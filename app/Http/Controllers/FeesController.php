@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Students;
 use Auth;
 use Carbon\Carbon;
+use App\OnlineAttendance;
 class FeesController extends Controller
 {
     //
@@ -71,6 +72,19 @@ class FeesController extends Controller
              $start_date = \Carbon\Carbon::createFromFormat('m/d/Y', $valid_till);
             // return $start_date;   
 
+
+            // make previous fee - false
+            $old_fees = Fees::where('student_id',$student_id)->where('is_latest',true)->first();
+
+            $old_fees->is_latest = false;
+            $old_fees->save();
+
+            // make previous attendance - false
+            DB::statement("UPDATE online_attendances SET is_latest = false where student_id=?",[$student_id]);
+
+
+            // record latest fee
+            $latest_fee = true;
             $fees = new Fees();
             $fees->student_id = $student_id;
             $fees->name = $student_name;
@@ -79,8 +93,12 @@ class FeesController extends Controller
             $fees->lectures_alloted = $request->lectures_alloted;
             $fees->fee_amount = $fees_amount;
             $fees->valid_till = $start_date;
+            $fees->is_latest = $latest_fee;
 
             $fees->save();
+
+
+            
         //     $save->valid_till = $start_date;
               return redirect('admin/students/fees/all');
             
