@@ -40,6 +40,10 @@ class AttendanceController extends Controller
        // return $request;
 
         $student_name = $request->student_name;
+
+        // return print_r($student_name);
+
+        // exit();
          // find details of student with there name.
          $column = 'name'; 
 
@@ -93,7 +97,13 @@ class AttendanceController extends Controller
 
            $all_attendance = OnlineAttendance::all();
 
-           return view('attendance.view')->with('all_attendance',$all_attendance);
+            // get 
+
+            return $student_id;
+
+          //  return redirect('/admin/students/attendance/'.$student_id);
+
+          // return view('attendance.individual')->with('all_attendance',$all_attendance);
 
 
     }
