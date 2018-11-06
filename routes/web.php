@@ -99,6 +99,8 @@ Route::post('admin/students/attendance','AttendanceController@store')->name('adm
 Route::get('admin/students/attendance/{id}','AttendanceController@viewAttendance')->name('admin.individual.view');
 
 
+// generate Invoices.
+Route::get('admin/generate/invoices','InvoicesController@index')->name('admin.generate.invoices');
 // Email Templates.
 Route::get('admin/emails/template1',function(){
 

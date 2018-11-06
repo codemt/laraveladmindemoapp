@@ -231,6 +231,7 @@
           </li>
         <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span>Discountinued  </span> </a> </li>
         <li><a href="{{ route('admin.emails.dashboard')}}"><i class="fa fa-book"></i> <span> Send Emails </span></a></li>
+        <li><a href="{{ route('admin.generate.invoices')}}"><i class="fa fa-book"></i> <span> Generate Invoices </span></a></li>
         {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
