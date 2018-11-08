@@ -73,14 +73,25 @@ class FeesController extends Controller
             // return $start_date;   
 
 
+
             // make previous fee - false
             $old_fees = Fees::where('student_id',$student_id)->where('is_latest',true)->first();
 
-            $old_fees->is_latest = false;
-            $old_fees->save();
+            if(empty($old_fees))
+            {
+
+
+            }else{
+
+              $old_fees->is_latest = false;
+              $old_fees->save();
 
             // make previous attendance - false
             DB::statement("UPDATE online_attendances SET is_latest = false where student_id=?",[$student_id]);
+
+            }
+           
+
 
 
             // record latest fee
