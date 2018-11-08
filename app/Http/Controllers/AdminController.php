@@ -11,6 +11,7 @@ use App\Events\CreateAdmissionEvent;
 use Event;
 use App\Fees;
 use App\OnlineAttendance;
+use App\Batches;
 
 class AdminController extends Controller
 {
@@ -99,14 +100,12 @@ class AdminController extends Controller
 
 
             $student_fee_detail = Fees::where('student_id',$id);
-
-
-
             $student_attendance = OnlineAttendance::where('student_id',$id);
             $student = Students::find($id);
-
+            $student_batch = Batches::where('student_id',$id);
 
             // delete dependant data 
+            $student_batch->delete();
             $student_attendance->delete();
             $student_fee_detail->delete();
 

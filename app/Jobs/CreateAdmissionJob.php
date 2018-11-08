@@ -74,7 +74,7 @@ class CreateAdmissionJob implements ShouldQueue
      Mail::send('emails.newadmission',$data,function($message){
 
 
-        $message->to('navdeep2930@gmail.com','Navdeep')->subject('Hello From Team');
+        $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Hello From Team');
 
      });
 
