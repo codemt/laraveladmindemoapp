@@ -120,6 +120,12 @@ Route::get('admin/emails/template/newadmission',function(){
     return view('emails.static.newadmission');
 
 });
+Route::get('admin/emails/template/action',function(){
+
+
+    return view('emails.action');
+
+});
 Route::get('tables',function(){
 
     return view('layouts.display_table');
