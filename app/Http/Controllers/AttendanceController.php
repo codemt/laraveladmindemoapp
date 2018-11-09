@@ -8,6 +8,7 @@ use App\Students;
 use App\Fees;
 use App\OnlineAttendance;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 
 class AttendanceController extends Controller
@@ -112,6 +113,26 @@ class AttendanceController extends Controller
                     // return $today;
 
                     $all_attendance = OnlineAttendance::all();
+
+                    $data = [
+
+                        'title'=>'New Attendance',
+                        'student_name'=>$request->student_name,
+                        'lectures_alloted'=>$lectures_alloted,
+                        'lectures_attended'=>$lectures_attended,
+                  
+                      
+            
+                    ];
+            
+          
+          
+                      Mail::send('emails.alert',$data,function($message){
+          
+          
+                        $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Your Attendance is Recorded ! It was Great to See You!');
+                
+                     });
 
                         // get 
 

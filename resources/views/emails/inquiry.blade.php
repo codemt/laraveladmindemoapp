@@ -3,8 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Alerts e.g. approaching your limit</title>
-<link href="styles.css" media="all" rel="stylesheet" type="text/css" />
+<title>Actionable emails e.g. reset password</title>
+<link href="{{ asset('css/emails/styles.css') }}" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body itemscope itemtype="http://schema.org/EmailMessage">
@@ -14,34 +14,24 @@
 		<td></td>
 		<td class="container" width="600">
 			<div class="content">
-				<table class="main" width="100%" cellpadding="0" cellspacing="0">
-					<tr>
-						<td class="alert alert-warning">
-							{{ $student_name  }} ,  it was great to see you today!
-						</td>
-					</tr>
+				<table class="main" width="100%" cellpadding="0" cellspacing="0" itemprop="action" itemscope itemtype="http://schema.org/ConfirmAction">
 					<tr>
 						<td class="content-wrap">
+							<meta itemprop="name" content="Confirm Email"/>
 							<table width="100%" cellpadding="0" cellspacing="0">
 								<tr>
 									<td class="content-block">
-									You have <strong>{{ $lectures_alloted }}</strong> Alloted Lectures. <br>
-									You have attended <strong>{{ $lectures_attended }}</strong> Lectures.<br>
-									</td>
-								</tr>
-								{{-- <tr>
-									<td class="content-block">
-										Add your credit card now to upgrade your account to a premium plan to ensure you don't miss out on any reports.
+										Dear {{ $student_name }} , Thank you for Inquiring about {{ $course_name }} Classes.
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block">
-										<a href="http://www.mailgun.com" class="btn-primary">Upgrade my account</a>
+										We are looking forward for you to Join our Community , to Know more leave a message or call  us @9769067349
 									</td>
-								</tr> --}}
+								</tr>
 								<tr>
 									<td class="content-block">
-										Thanks for choosing 101Musicals Academy , as your education partner.
+										&mdash; QEducation LLP
 									</td>
 								</tr>
 							</table>
@@ -51,7 +41,7 @@
 				<div class="footer">
 					<table width="100%">
 						<tr>
-							<td class="aligncenter content-block"><a href="http://www.mailgun.com">Unsubscribe</a> from these alerts.</td>
+							<td class="aligncenter content-block">Follow <a href="http://twitter.com/mail_gun">@101musicalsAcademy</a> on Facebook.</td>
 						</tr>
 					</table>
 				</div></div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Inquiries;
+use Illuminate\Support\Facades\Mail;
 class InquiryController extends Controller
 {
     //
@@ -39,7 +40,27 @@ class InquiryController extends Controller
 
 
             $new_inquiry->save(); 
-            //  return $new_inquiry;
+
+            $data = [
+
+                'title'=>'New Inquiry',
+                'student_name'=>$request->name,
+                'course_name'=> $request->course_name,
+          
+              
+    
+            ];
+    
+  
+  
+              Mail::send('emails.inquiry',$data,function($message){
+  
+  
+                $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('We have Received your Inquiry! Thank You!');
+        
+             });
+  
+             return redirect('admin/students/inquiry/index');
 
 
 
