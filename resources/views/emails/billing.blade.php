@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Billing e.g. invoices and receipts</title>
-<link href="styles.css" media="all" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/emails/styles.css') }}" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body itemscope itemtype="http://schema.org/EmailMessage">
@@ -20,21 +20,21 @@
 							<table width="100%" cellpadding="0" cellspacing="0">
 								<tr>
 									<td class="content-block">
-										<h1 class="aligncenter">$33.98 Paid</h1>
+										<h1 class="aligncenter">{{ $fee_amount }} Paid</h1>
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block">
-										<h2 class="aligncenter">Thanks for using Acme Inc.</h2>
+										<h2 class="aligncenter">Thanking You , 101MusicalsAcademy of Music </h2>
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block aligncenter">
 										<table class="invoice">
 											<tr>
-												<td>Lee Munroe<br>Invoice #12345<br>June 01 2014</td>
+											<td>{{ $student_name }}<br>Valid Till<br>{{ $valid_till }}</td>
 											</tr>
-											<tr>
+											{{-- <tr>
 												<td>
 													<table class="invoice-items" cellpadding="0" cellspacing="0">
 														<tr>
@@ -55,18 +55,18 @@
 														</tr>
 													</table>
 												</td>
-											</tr>
+											</tr> --}}
 										</table>
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block aligncenter">
-										<a href="http://www.mailgun.com">View in browser</a>
+										{{-- <a href="http://www.mailgun.com">View in browser</a> --}}
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block aligncenter">
-										Acme Inc. 123 Van Ness, San Francisco 94102
+										101MusicalsAcademy , 217/8475 ,Opposite Rationing Office, Kannamwar Nagar I, Vikhroli East, Mumbai, Maharashtra 400083
 									</td>
 								</tr>
 							</table>
@@ -76,7 +76,7 @@
 				<div class="footer">
 					<table width="100%">
 						<tr>
-							<td class="aligncenter content-block">Questions? Email <a href="mailto:">support@acme.inc</a></td>
+							<td class="aligncenter content-block">Questions? Email <a href="mailto:">mithilesh@qeducation.in</a></td>
 						</tr>
 					</table>
 				</div></div>

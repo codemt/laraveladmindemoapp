@@ -9,6 +9,7 @@ use App\Students;
 use Auth;
 use Carbon\Carbon;
 use App\OnlineAttendance;
+use Illuminate\Support\Facades\Mail;
 class FeesController extends Controller
 {
     //
@@ -107,6 +108,30 @@ class FeesController extends Controller
             $fees->is_latest = $latest_fee;
 
             $fees->save();
+
+
+
+           
+            
+            $data = [
+
+              'title'=>'New Admission Done',
+              'student_name'=>$student_name,
+              'course_name'=>$course_name,
+              'fee_amount'=>$fees_amount,
+              'valid_till'=>$start_date
+            
+  
+          ];
+  
+
+
+            Mail::send('emails.billing',$data,function($message){
+
+
+              $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Your Fee Receipt!');
+      
+           });
 
 
             
