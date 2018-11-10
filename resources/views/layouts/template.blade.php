@@ -185,10 +185,20 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul> 
         </li> --}}
-        <li> <a href="{{ route('admin.fees.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Fees </span> </a> </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span> Fees</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li> <a href="{{ route('admin.fees.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Fees </span> </a> </li>
+            <li> <a href="{{ route('admin.fees.index') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View All Fees </span> </a> </li>
+            <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
+          </ul>
+        </li>
         <li> <a href="{{ route('admin.courses.create') }}"> <i class="fas fa-graduation-cap"></i> <span style="padding-left: 1em">  Add Courses </span> </a> </li>
-        <li> <a href="{{ route('admin.fees.index') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View All Fees </span> </a> </li>
-        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
         <li class="treeview">
           <a href="#">
             <i class="fas fa-check"></i> <span> Online Attendance</span>
@@ -229,7 +239,19 @@
             
             </ul>
           </li>
-        <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span>Discountinued  </span> </a> </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-folder"></i> <span> Discountinued </span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span> View Discountinued  </span> </a> </li>
+              <li><a href="{{ route('admin.inquiry') }}"><i class="fa fa-circle-o"></i> Add Discontinued  </a></li>
+            </ul>
+          </li>
+       
         <li><a href="{{ route('admin.emails.dashboard')}}"><i class="fa fa-book"></i> <span> Send Emails </span></a></li>
         <li><a href="{{ route('admin.generate.invoices')}}"><i class="fa fa-book"></i> <span> Generate Invoices </span></a></li>
         {{-- <li class="header">LABELS</li>

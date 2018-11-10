@@ -2,7 +2,8 @@
 <meta name="_token" content="{{csrf_token()}}" />
 @section('content')
 
-<form>
+<form action="{{ route('admin.make.pdf') }}" method="post" class="container">
+        {{ csrf_field() }}
     <fieldset>
       <legend> Generate Invoices  </legend>
       <div class="form-group row">
@@ -28,7 +29,7 @@
         <label for="exampleTextarea">Email Body</label>
         {{-- <textarea name="summernoteInput"  id="textarea" class="summernote" rows="3"></textarea> --}}
       </div>
-      <button type="submit" id="submit" class="btn btn-primary">Generate</button>
+      <button type="submit"  class="btn btn-primary">Generate</button>
     </fieldset>
   </form>
   @section('scripts')
@@ -75,69 +76,7 @@
 
 
 
-                      $('#submit').on('click',function(e){
-
-
-                          e.preventDefault();
-
-                         // alert('you clicked me')
-                          console.log($('#exampleSelect1').val());
-
-
-                              $.ajaxSetup({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                                }
-                            });
-
-
-
-                             $.ajax({
-
-
-                                  url: "{{ route('admin.make.pdf') }}",
-                                  method: 'post',
-                                  data : {
-
-                                      student_name : $('#exampleSelect1').val()
-
-
-
-                                  },
-                                  success: function(result){
-
-
-                                    console.log(result);
-
-                                    window.location = result;
-
-                                  //   var trHTML;
-                                  //   $.each(result, function (i, item) {
-                                        
-                                  //       trHTML += '<option>' + result[i]['name'] + '</option>';
-                                  //   });
-
-                                  // $('#exampleSelect1').append(trHTML);
-
-
-
-
-                                  },
-                                  error: function (data) {
-
-                                  console.log(data);
-                                  console.log('Error:', data);
-
-                                  }
-
-
-                              }); 
-
-
-
-
-
-                      });
+                   
                        
 
 

@@ -138,11 +138,8 @@ class FeesController extends Controller
 
 
             
-               $pdf = PDF::loadView('emails.billingpdf',$data);
-                return $pdf->download('receipt.pdf');
-
         //     $save->valid_till = $start_date;
-             // return redirect('admin/students/fees/all');
+              return redirect('admin/students/fees/all');
             
 
     }
