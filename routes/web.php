@@ -95,6 +95,11 @@ Route::get('admin/students/attendance/create','AttendanceController@show')->name
 Route::post('admin/students/attendance','AttendanceController@store')->name('admin.attendance.store');
 
 
+// Dicontinued
+Route::get('admin/students/discontinued/all','DiscontinuedController@index')->name('admin.discontinued.all');
+Route::get('admin/students/discontinued/add','DiscontinuedController@create')->name('admin.discontinued.create');
+Route::post('admin/students/discontinued/add','DiscontinuedController@store')->name('admin.discontinued.store');
+
 // view individual attendance details.
 Route::get('admin/students/attendance/{id}','AttendanceController@viewAttendance')->name('admin.individual.view');
 

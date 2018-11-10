@@ -247,8 +247,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li> <a href="{{ route('admin.students.fees') }}"> <i class="fa fa-share"></i> <span> View Discountinued  </span> </a> </li>
-              <li><a href="{{ route('admin.inquiry') }}"><i class="fa fa-circle-o"></i> Add Discontinued  </a></li>
+              <li> <a href="{{ route('admin.discontinued.all') }}"> <i class="fa fa-share"></i> <span> View Discountinued  </span> </a> </li>
+              <li><a href="{{ route('admin.discontinued.create') }}"><i class="fa fa-circle-o"></i> Add Discontinued  </a></li>
             </ul>
           </li>
        
