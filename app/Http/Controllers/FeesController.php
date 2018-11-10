@@ -10,6 +10,9 @@ use Auth;
 use Carbon\Carbon;
 use App\OnlineAttendance;
 use Illuminate\Support\Facades\Mail;
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 class FeesController extends Controller
 {
     //
@@ -135,8 +138,11 @@ class FeesController extends Controller
 
 
             
+               $pdf = PDF::loadView('emails.billingpdf',$data);
+                return $pdf->download('receipt.pdf');
+
         //     $save->valid_till = $start_date;
-              return redirect('admin/students/fees/all');
+             // return redirect('admin/students/fees/all');
             
 
     }

@@ -101,6 +101,7 @@ Route::get('admin/students/attendance/{id}','AttendanceController@viewAttendance
 
 // generate Invoices.
 Route::get('admin/generate/invoices','InvoicesController@index')->name('admin.generate.invoices');
+Route::post('admin/generate/invoices','InvoicesController@store')->name('admin.make.pdf');
 // Email Templates.
 Route::get('admin/emails/template1',function(){
 
