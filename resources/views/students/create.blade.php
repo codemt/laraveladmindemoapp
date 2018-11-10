@@ -15,8 +15,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Enter Course Name </label>
-            <select class="form-control" id="exampleSelect2" name="course_name">
-       
+            <select class="form-control" id="course_name" name="course_name">
             </select>    
       </div>
         <div class="form-group">
@@ -75,7 +74,7 @@
                                                 trHTML += '<option>' + result[i]['course_name'] + '</option>';
                                           });
 
-                                          $('#exampleSelect2').append(trHTML);
+                                          $('#course_name').append(trHTML);
 
 
 
