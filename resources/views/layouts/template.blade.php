@@ -198,7 +198,19 @@
             <li> <a href="{{ route('admin.students.fees') }}"> <i class="fas fa-chart-line"></i> <span style="padding-left: 1em">Fees Master </span> </a> </li>
           </ul>
         </li>
-        <li> <a href="{{ route('admin.courses.create') }}"> <i class="fas fa-graduation-cap"></i> <span style="padding-left: 1em">  Add Courses </span> </a> </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span> Courses</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li> <a href="{{ route('admin.courses.get') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  View Courses </span> </a> </li>
+            <li> <a href="{{ route('admin.courses.add') }}"> <i class="fas fa-graduation-cap"></i> <span style="padding-left: 1em">  Add Courses </span> </a> </li>
+          </ul>
+        </li>
+      
         <li class="treeview">
           <a href="#">
             <i class="fas fa-check"></i> <span> Online Attendance</span>

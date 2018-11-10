@@ -28,7 +28,7 @@
               <th> Mobile </th>
               <th> Email </th>
               <th>  Created at </th>
-              <th>  Action </th>
+              {{-- <th>  Action </th> --}}
             </tr>
             @foreach($inquiries as $inquiry)
             <tr>
@@ -38,7 +38,7 @@
               <td>{{ $inquiry->mobile }}</td>
               <td>{{ $inquiry->email }}</td>
               <td>{{ $inquiry->created_at }}</td>
-              <td> <a href="{{ url('admin/students/edit/'.$inquiry->id) }}"> <i class="fas fa-trash-alt"></i> </a> </td>
+              {{-- <td> <a href="{{ url('admin/students/edit/'.$inquiry->id) }}"> <i class="fas fa-trash-alt"></i> </a> </td> --}}
             </tr>
             @endforeach
           </table>

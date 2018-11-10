@@ -105,7 +105,7 @@
                           $.ajax({
 
 
-                                    url: "{{ route('admin.courses.get') }}",
+                                    url: "{{ route('admin.courses.fetch') }}",
                                     method: 'get',
                                     success: function(result){
 

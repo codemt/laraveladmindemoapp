@@ -29,7 +29,7 @@
                                         <table width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td class="content-block">
-                                                    <h1 class="aligncenter">{{ $fee_amount }} Paid</h1>
+                                                <h1 class="aligncenter">{{ $fee_amount }} Paid for {{ $course_name }} Lessons </h1>
                                                 </td>
                                             </tr>
                                             <tr>

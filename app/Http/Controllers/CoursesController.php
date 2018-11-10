@@ -7,16 +7,44 @@ use App\Courses;
 class CoursesController extends Controller
 {
     //
-    public function create(){
+    public function index(){
 
 
-       
+            $courses = Courses::all();
 
+
+
+            return view('courses.index')->with('courses',$courses);
 
 
 
 
     }
+
+    public function create(){
+
+
+        return view('courses.add');
+
+
+
+    }
+    public function store(Request $request){
+
+
+
+            $course_name = $request->course_name;
+
+
+            $new_course = new Courses();
+            $new_course->course_name = $course_name;
+            $new_course->save();
+
+
+            return redirect('admin/students/courses/all');
+
+    }
+
 
     public function getCourses(){
 

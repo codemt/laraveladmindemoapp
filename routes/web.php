@@ -46,9 +46,7 @@ Route::get('admin/students/delete/{id}','AdminController@deleteStudent')->name('
 // add fees dashboard
 Route::get('admin/students/fees/dashboard','FeesController@index')->name('admin.students.fees');
 
-// add Courses 
-Route::get('admin/students/courses/add','CoursesController@create')->name('admin.courses.create');
-Route::get('admin/courses/get','CoursesController@getCourses')->name('admin.courses.get');
+
 
 // create fee record
 Route::get('admin/students/fees','FeesController@create')->name('admin.fees.create');
@@ -87,6 +85,14 @@ Route::get('admin/students/batches/edit','BatchController@editBatch')->name('adm
 Route::post('admin/students/batches/update','BatchController@update')->name('admin.batch.update');
 Route::get('admin/students/batches/view','BatchController@index')->name('admin.batch.view');
 Route::get('admin/students/batches/get','BatchController@getBatches')->name('admin.batch.get');
+
+
+// Courses
+Route::get('admin/students/courses/all','CoursesController@index')->name('admin.courses.get');
+Route::get('admin/students/courses','CoursesController@create')->name('admin.courses.add');
+Route::post('admin/students/courses','CoursesController@store')->name('admin.courses.store');
+Route::get('admin/courses/get','CoursesController@getCourses')->name('admin.courses.fetch');
+
 
 
 // Online Attendance.

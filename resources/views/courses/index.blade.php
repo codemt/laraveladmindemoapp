@@ -5,7 +5,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">View Attendance Table</h3>
+          <h3 class="box-title">Courses Master</h3> 
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -24,13 +24,11 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th> Last Attendance </th>
             </tr>
-            @foreach($all_attendance as $value)
+            @foreach($courses as $value)
              <tr>
-               <td> <a href="{{ url('admin/students/attendance/'.$value->student_id) }}">{{ $value->id }}</td>
-               <td> {{ $value->student_name }}</td>
-               <td>{{ $value->attended_on }}</td>
+               <td>{{ $value->id }}</td>
+               <td> {{ $value->course_name }}</td>
               </tr>
             @endforeach
             
