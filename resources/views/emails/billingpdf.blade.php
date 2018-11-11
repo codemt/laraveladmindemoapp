@@ -29,7 +29,12 @@
                                         <table width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td class="content-block">
-                                                <h1 class="aligncenter">{{ $fee_amount }} Paid for {{ $course_name }} Lessons </h1>
+                                                <h1 class="aligncenter">{{ $fee_amount }} Paid for {{ $course_name }} Lessons </h1> <br> <br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="content-block">
+                                                <img src="dist/img/logo2.png" width="400" height="200" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -41,8 +46,9 @@
                                                 <td class="content-block aligncenter">
                                                     <table class="invoice">
                                                         <tr>
-                                                        <td>{{ $student_name }}<br>Valid Till<br>{{ $valid_till }}</td>
+                                                        <td> Student Name : {{ $student_name }}<br>Valid Till: {{ $valid_till }}</td>
                                                         </tr>
+                                                        <br><br><br>
                                                         {{-- <tr>
                                                             <td>
                                                                 <table class="invoice-items" cellpadding="0" cellspacing="0">
