@@ -19,8 +19,8 @@ class CreateDiscontinuedsTable extends Migration
             $table->text('course_name');
             $table->string('student_email');
             $table->string('parent_email');
-            $table->integer('student_mobile');
-            $table->integer('parent_mobile');
+            $table->bigInteger('student_mobile');
+            $table->bigInteger('parent_mobile');
             $table->string('address');
             $table->boolean('discontinued')->default(false);
             $table->boolean('course_completed')->default(false);

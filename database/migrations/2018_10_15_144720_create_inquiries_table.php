@@ -18,7 +18,7 @@ class CreateInquiriesTable extends Migration
             $table->string('name');
             $table->string('course_name');
             $table->string('email');
-            $table->integer('mobile');
+            $table->bigInteger('mobile');
             $table->timestamps();
         });
     }
