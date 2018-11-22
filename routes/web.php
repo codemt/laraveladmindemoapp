@@ -81,6 +81,10 @@ Route::get('admin/students/inquiry','InquiryController@create')->name('admin.inq
 Route::post('admin/students/inquiry','InquiryController@store')->name('inquiry.store');
 
 
+// Custom Emails
+Route::post('admin/students/mail/send','EmailController@sendEmail')->name('admin.mail.send');
+
+
 
 // Batches.
 Route::get('admin/students/batches/create','BatchController@create')->name('admin.batch.create');
