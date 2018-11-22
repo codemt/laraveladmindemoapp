@@ -25,7 +25,7 @@ class EmailController extends Controller
 
        Mail::send([], [], function($message) use ($from_email,$subject,$email_body){
             
-        $message->to($from_email,'Mithilesh')->subject($subject)->setBody($email_body,'text/html');
+        $message->to($from_email)->subject($subject)->setBody($email_body,'text/html');
 
 
     });
