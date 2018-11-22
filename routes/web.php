@@ -68,7 +68,11 @@ Route::get('admin/students/totalfees','FeesController@getTotalFees')->name('admi
 Route::get('admin/students/getnames','AdminController@getNames')->name('admin.getStudentNames');
 
 
-
+// Dues
+Route::get('admin/dues/all','DuesController@index')->name('admin.dues.all');
+Route::get('admin/dues/create','DuesController@create')->name('admin.dues.create');
+Route::post('admin/dues/create','DuesController@store')->name('admin.dues.store');
+Route::get('admin/dues/delete/{id}','DuesController@delete')->name('admin.dues.delete');
 
 
 // Inquiries

@@ -200,6 +200,18 @@
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-folder"></i> <span> Dues</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li> <a href="{{ route('admin.dues.create') }}"> <i class="fas fa-money-bill-alt"></i> <span style="padding-left: 1em">  Add Dues </span> </a> </li>
+            <li> <a href="{{ route('admin.dues.all') }}"> <i class="fas fa-eye"></i> <span style="padding-left: 1em"> View Dues </span> </a> </li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-folder"></i> <span> Courses</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
