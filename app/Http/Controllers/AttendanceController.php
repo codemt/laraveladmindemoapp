@@ -126,7 +126,6 @@ class AttendanceController extends Controller
                     ];
             
           
-          
                       Mail::send('emails.alert',$data,function($message){
           
           
@@ -214,8 +213,8 @@ class AttendanceController extends Controller
 
        // $all_details = array_merge($all_attendance,$name_details);
        //return  $new_array;
-
-           return view('attendance.view',compact('all_attendance','name_details'));
+               $id = 1; 
+           return view('attendance.view',compact('all_attendance','name_details','id'));
 
     }
 

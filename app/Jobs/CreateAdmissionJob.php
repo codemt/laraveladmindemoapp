@@ -39,6 +39,9 @@ class CreateAdmissionJob implements ShouldQueue
         //
         $admission_data = $this->admission_data;
 
+
+       $student_email =  $admission_data['student_email'];
+
         \Log::info($admission_data);
         $new = new Students();
        // dd(print_r($admission_data['name']));
@@ -70,11 +73,18 @@ class CreateAdmissionJob implements ShouldQueue
 
     //  });
 
+    // Mail::send([], [], function($message) use ($from_email,$subject,$email_body){
+            
+    //     $message->to($from_email)->subject($subject)->setBody($email_body,'text/html');
 
-     Mail::send('emails.action',$data,function($message){
+
+    // });
 
 
-        $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Hello From Team');
+     Mail::send('emails.action',$data,function($message) use($student_email){
+
+
+        $message->to($student_email)->subject('Hello From Team');
 
      });
 

@@ -28,7 +28,7 @@
             </tr>
             @foreach($all_attendance as $value)
              <tr>
-               <td> <a href="{{ url('admin/students/attendance/'.$value->student_id) }}">{{ $value->id }}</td>
+               <td> <a href="{{ url('admin/students/attendance/'.$value->student_id) }}">{{ $id++ }}</td>
                <td> {{ $value->student_name }}</td>
                <td>{{ $value->attended_on }}</td>
               </tr>

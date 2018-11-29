@@ -26,12 +26,17 @@
 								</tr>
 								<tr>
 									<td class="content-block">
+									<img src="{{ asset('img/logo2.png') }}" alt="" srcset="">
+									</td>
+								</tr>
+								<tr>
+									<td class="content-block">
 										We are pleased to have you onboarded with us. We Wish you all the best in your musical adventures
 									</td>
 								</tr>
 								<tr>
 									<td class="content-block">
-										&mdash; QEducation LLP
+										&mdash; 101 Musicals Academy of Music. 
 									</td>
 								</tr>
 							</table>

@@ -13,9 +13,9 @@ class CoursesController extends Controller
             $courses = Courses::all();
 
 
-
-            return view('courses.index')->with('courses',$courses);
-
+            $id = 1; 
+           // return view('courses.index')->with('courses',$courses);
+            return view('courses.index',compact('courses','id'));
 
 
 

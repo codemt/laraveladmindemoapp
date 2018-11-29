@@ -29,7 +29,11 @@ class AdminController extends Controller
             
            $students = Students::All();
            //return $students; 
-           return view('students.students')->with('students',$students);
+           $id=1;
+         //  return view('students.students')->with('students',$students);
+           return view('students.students',compact('students','id'));
+
+
 
     }
     public function createNew(){

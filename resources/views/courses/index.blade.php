@@ -27,7 +27,7 @@
             </tr>
             @foreach($courses as $value)
              <tr>
-               <td>{{ $value->id }}</td>
+               <td>{{ $id++ }}</td>
                <td> {{ $value->course_name }}</td>
               </tr>
             @endforeach

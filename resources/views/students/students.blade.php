@@ -34,7 +34,7 @@
             </tr>
             @foreach($students as $student)
             <tr>
-            <td> <a href="{{ url('admin/students/edit/'.$student->id) }}"> {{$student->id}} </a> </td>
+            <td> <a href="{{ url('admin/students/edit/'.$student->id) }}"> {{ $id++ }} </a> </td>
               <td>{{ $student->name }}</td>
               <td><span class="label label-success">{{$student->course_name}}</span></td>
               <td>{{ $student->student_email }}</td>
