@@ -26,7 +26,7 @@
 								<tr>
 									<td class="content-block">
 									You have <strong>{{ $lectures_alloted }}</strong> Alloted Lectures. <br>
-									You have attended <strong>{{ $lectures_attended }}</strong> Lectures.<br>
+									You have attended <strong>{{ $lectures_attended+1 }}</strong> Lectures.<br>
 									</td>
 								</tr>
 								{{-- <tr>
